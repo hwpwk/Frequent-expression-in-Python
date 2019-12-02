@@ -27,8 +27,6 @@ file_list
 order_cols = ['決算日',  'B/C', 'コード', '金額']
 
 # In[10]:
-
-
 # int型で指定した場合、欠損値があるとエラーになるのですべてのカラムをstr型で読み込む
 df_list =[pd.read_csv(file, encoding='ms932',engine='python',dtype='object') for file in file_list]
 
