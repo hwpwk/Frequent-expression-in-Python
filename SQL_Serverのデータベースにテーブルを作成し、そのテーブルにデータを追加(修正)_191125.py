@@ -79,8 +79,6 @@ conn, curs = connect_to_sqlserver('test_db_1')
 # 参考：https://itsakura.com/python-sqlite-insert
 
 # In[15]:
-
-
 def create_tables_in_sqlserver(file_name_list, curs=curs, conn=conn):
     '''
     関数内容
