@@ -96,9 +96,10 @@ def create_tables_in_sqlserver(file_name_list, curs=curs, conn=conn):
     # [/](スラッシュ)がカラム名に含まれている場合はカラム名を[]で囲う必要がある
     # NUMERICの最大指定桁数は38
     for file_name in file_name_list:
+        print(file_name + 'のテーブルの作成を開始します。')
         curs.execute(
         'CREATE TABLE ' + file_name +\
-        '(決算日 DATE,[B/C] VARCHAR(255),コード NVARCHAR(255),金額 NUMERIC(38))')
+        '(決算日 DATE,[B/C] VARCHAR(255),コード NVARCHAR(255),金額 FLOAT)')
 
         conn.commit()
 
@@ -130,7 +131,7 @@ def insert_into_sqlserver(file_name_list, df_list, curs=curs, conn=conn):
     '''
     for file_name, df in zip(file_name_list, df_list):
         values_tuple = [tuple(row) for row in df.values]
-        
+        print(file_name + 'のテーブルにデータを格納していきます。')
         # カラムが複数ある結果、挿入したい値が複数ある場合はcurs.executemanyを使う
         curs.executemany(
             'INSERT INTO ' + file_name +'(決算日, [B/C], コード, 金額) VALUES (?,?,?,?)',values_tuple
