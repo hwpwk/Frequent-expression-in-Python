@@ -3,7 +3,7 @@ import gc
 import glob
 import pandas as pd
 
-files = glob.glob(r'L:/Work/20008_日立_SSB/2._Data/2.1_Received_Data/金融/csv/*WBS*')
+files = glob.glob(r'L:/data/csv/*sale*')
 files = sorted(wbs_files)
 
 file_name_list = [os.path.splitext(os.path.basename(file))[0] for file in files]
