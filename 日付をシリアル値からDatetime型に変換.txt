@@ -1,0 +1,6 @@
+﻿import pandas as pd
+
+df['決算日']=pd.to_timedelta(df['決算日_シリアル値'],unit='D')+pd.to_datetime("1900/01/01")
+
+# 参考
+#https://pyhoo.jp/datetime#PythonDatetime
