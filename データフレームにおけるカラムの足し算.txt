@@ -1,0 +1,7 @@
+﻿import pandas as pd
+
+key_col = ['会社コード','会社名']
+
+df[['決算日']+key_col]
+
+df1[['決算日','売上原価率']+key_col]
