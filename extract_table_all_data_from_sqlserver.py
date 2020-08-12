@@ -7,7 +7,7 @@ def create_basic_dataframe(database, table_name):
     
     '''
     関数内容
-    ・SQLserverの指定データベースに接続し指定テーブルから会社名、決算日、各会計指標を抽出&追加する関数
+    ・SQLserverの指定データベースに接続し指定テーブルすべてのデータを抽出する関数
     Input
     ・database:接続したいデータベース名
     ・table_name：抽出したいテーブルの名前
@@ -25,7 +25,7 @@ def create_basic_dataframe(database, table_name):
     return df
  
 # 1    
-def connect_to_sqlserver(database, driver='{SQL Server}', server = 'JPTOKCMZFDASQ01\INST1',trusted_connection='yes'):
+def connect_to_sqlserver(database, driver='{SQL Server}', server = 'xx1',trusted_connection='yes'):
     '''
     関数内容
     ・PythonからSQLserverへ接続する関数
