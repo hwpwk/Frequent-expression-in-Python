@@ -1,4 +1,5 @@
-﻿# 2つのデータフレームの値に差異があるか比較したいデータフレームをイコールでつなげることで値が同じであればTrue,違っていればFalseになったデータフレームが作成される
-comparison_df = csv_df.drop(['速報年月日'],axis=1) == xlsx_df.drop(['速報年月日'],axis=1)
+# 2つのデータフレームの値に差異があるか比較したいデータフレームをイコールでつなげることで値が同じであればTrue,違っていればFalseになったデータフレームが作成される
+# reset_index()を使ってインデックス番号を揃えないと「Can only compare identically-labeled DataFrame objects」というエラーが発生する
+comparison_df = csv_df.drop(['速報年月日'],axis=1).reset_index(drop=True) == xlsx_df.drop(['速報年月日'],axis=1).reset_index(drop=True)
 # Trueは1なのでCSVファイルとxlsxファイルの値に差異がない場合に、行方向にsum関数を使うとTrueの合計＝行数となる
 display(comparison_df.sum())
