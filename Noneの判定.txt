@@ -1,0 +1,5 @@
+﻿for i in range(len(merge_df)):
+    if merge_df.loc[i,'会社名_new'] is None:
+        print(str(i)+'は欠損値')
+    else:
+        print(str(i)+'は欠損値ではない')
