@@ -1,0 +1,1 @@
+list(set(list1)-set(code_list1))
