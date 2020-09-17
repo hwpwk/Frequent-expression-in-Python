@@ -61,7 +61,7 @@ def extract_colname_and_dtype_from_dataframe(df,date_col_list,nvarchar_col_list,
     return dtypes_df
 
 # 2
-def connect_to_sqlserver(database, driver='{SQL Server}', server = 'JPTOKCMZFDASQ02\INST2',trusted_connection='yes'):
+def connect_to_sqlserver(database, driver='{SQL Server}', server = 'xxxxx',trusted_connection='yes'):
     '''
     関数内容
     ・PythonからSQLserverへ接続する関数
