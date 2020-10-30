@@ -1,0 +1,31 @@
+﻿import pandas as pd
+
+def memo_sql_about_data_migrations(new_database_name, old_database_name, master_table_list, ana_table_list,raw_table_name_list):
+    '''
+    新規データベースに過去のデータを移行する際に使用するSQLコードを下書きする関数
+    '''
+    
+    table_name_list = master_table_list + ana_table_list + raw_table_name_list
+    
+    
+    for m_tbl in table_name_list:
+        
+        
+        # スキーマが「ana」のテーブル
+        if m_tbl in ana_table_list:
+            print('SELECT * INTO ['+ new_database_name+'].[ana].['+m_tbl+'] FROM ['+old_database_name+'].[ana].['+m_tbl+']')
+        # スキーマが「ana」以外のテーブル
+        else:
+            print('SELECT * INTO ['+ new_database_name+'].[raw].['+m_tbl+'] FROM ['+old_database_name+'].[raw].['+m_tbl+']')
+    
+    print('*'*90)
+    print('上記コードをコピペしてSQLで実行してください。')
+             
+new_database_name = '156_M'
+old_database_name = '089_M'
+master_table_name_list = ['マスタ','']
+ana_table_name_list = ['財務']
+raw_table_name_list = table_name_list
+
+memo_sql_about_data_migrations(
+    new_database_name, old_database_name, master_table_name_list, ana_table_name_list,raw_table_name_list)
