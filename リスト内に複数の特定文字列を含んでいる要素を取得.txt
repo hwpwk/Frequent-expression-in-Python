@@ -1,0 +1,6 @@
+﻿tmp_s_name_list2 = []
+
+for s in s_name_l:
+        # シート名に「明細」かつ「四半期」という文字列が含まれているシート名を取得
+        if '明細' in s and '四半期' in s:
+                tmp_s_name_list2.append(s)
