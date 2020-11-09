@@ -1,0 +1,6 @@
+﻿
+# カラム名に「F1」があった場合、そのカラムを削除し、ない場合は何もしない
+# リスト内包表記でelseを使用する際にはif文をelseの前に書く必要がある
+df_list = [df.drop('F1',axis=1) if 'F1' in df.columns.tolist() else df for df in df_list]
+
+# https://qiita.com/kokorinosoba/items/eb72dac6b68fccbac04d
