@@ -1,0 +1,6 @@
+sheet_name_list = [pd.ExcelFile(path).sheet_names for path in files]
+
+# 二重listを一重listに変換
+de_sheet_name_list  = [n for name in sheet_name_list for n in name]
+
+# 参考：https://qiita.com/7of9/items/84dcb552668a8a3bdcd3
