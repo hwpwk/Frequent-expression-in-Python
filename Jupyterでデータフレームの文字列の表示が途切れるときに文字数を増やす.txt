@@ -1,0 +1,4 @@
+﻿Jupyterでデータフレームの文字列の表示が途切れるときに文字数を増やす
+# デフォルトは50文字らしい
+pd.set_option("display.max_colwidth", 150)
+
