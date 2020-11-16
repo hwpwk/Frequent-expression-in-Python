@@ -1,0 +1,12 @@
+﻿import pandas as pd
+
+# 請負額をstr型からfloat型に変換したいが値にカンマが含まれているために変換できない場合
+
+tmp_df_list = []
+
+for tmp_df in df_list:
+　# カンマを削除
+    tmp_df['請負額'] = tmp_df['請負額'].map(lambda x:x.replace(',',''))
+    tmp_df_list.append(tmp_df)
+
+df_list = [df.astype({'請負額':float}) for df in df_list]
