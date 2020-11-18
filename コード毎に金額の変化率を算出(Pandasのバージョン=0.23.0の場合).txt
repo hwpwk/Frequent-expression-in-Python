@@ -1,0 +1,18 @@
+## pandasのバージョンが0.23.0の場合groupbyとshiftの組み合わせが使用できない
+
+# ユニークなコードを抽出
+comp_list = sorted(list(set(df['コード'].tolist())))
+
+# 会社名毎にデータフレームを分割しリストに格納
+df_list = [df[df['コード']==comp].sort_values(['コード','決算日']).reset_index(drop=True) for comp in comp_list]
+
+
+# 直前決算日との変化率を取得したデータフレームを作成しリストに格納
+pct_df_list = []
+
+for tmp_df in df_list:
+    tmp_df['変化率'] = tmp_df['金額'].pct_change(1)
+    pct_df_list.append(tmp_df)
+    
+# すべてのコードを縦に連結    
+df1 = pd.concat(pct_df_list, ignore_index=True)
