@@ -1,0 +1,3 @@
+﻿import pandas as pd
+
+b_df = df[df['col'].isnull()]
