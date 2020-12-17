@@ -1,0 +1,4 @@
+﻿for col in df.columns.tolist():
+    # 会社コード毎にユニークな値を抽出し、抽出値にnanが含まれている場合はnanを削除
+    unique_list = [v for v in df[col].unique().tolist() if str(v)!='nan']
+    print('会社コード:'+col, unique_list)
