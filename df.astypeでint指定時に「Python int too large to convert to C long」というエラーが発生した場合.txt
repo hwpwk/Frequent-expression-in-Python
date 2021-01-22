@@ -1,0 +1,4 @@
+﻿df.astype({'x':int})
+として「Python int too large to convert to C long」というエラーが発生した場合は
+df.astype({'x':np.int64})
+とする
