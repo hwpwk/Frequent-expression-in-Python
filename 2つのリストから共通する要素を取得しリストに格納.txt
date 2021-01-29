@@ -1,0 +1,2 @@
+﻿2つのリストから共通する要素を取得しリストに格納
+comon_col_list = list(set(k_df.columns)& set(m_df.columns))
