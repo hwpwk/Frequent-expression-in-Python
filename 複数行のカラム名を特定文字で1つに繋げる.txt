@@ -1,0 +1,2 @@
+﻿#1,2行目のカラム名を「_」で繋げる
+df.columns = ['_'.join(map(str, c)) for c in df.columns]
