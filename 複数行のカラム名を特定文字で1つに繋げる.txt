@@ -1,2 +1,4 @@
-﻿#1,2行目のカラム名を「_」で繋げる
+﻿# 1,2行目をヘッダーとして読み込む
+df = pd.read_excel(path, dtype='object', header=[1,2], sheet_name=sheet_name)
+#1,2行目のカラム名を「_」で繋げる
 df.columns = ['_'.join(map(str, c)) for c in df.columns]
