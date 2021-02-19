@@ -1,0 +1,4 @@
+﻿# 1.下記コードで指定したい列のインデックス番号を調べる
+u_pivot_df1.columns.values 
+# 2.上記コードとインデックス番号で指定したい列の条件を書く
+u_pivot_df1[u_pivot_df1[u_pivot_df1.columns.values[-3]] == True]
