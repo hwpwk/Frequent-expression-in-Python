@@ -1,0 +1,4 @@
+﻿# 累計の値と累計2の値が数字の場合には累計の値と累計2の値の差を算出する
+df['diff'] =df.apply(lambda x: int(x['累計'])- int(x['累計_2']) 
+                   if x['累計'].isdecimal()is True and x['累計_2'].isdecimal() is True 
+                   else pass, axis=1)
