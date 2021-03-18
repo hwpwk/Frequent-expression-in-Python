@@ -1,0 +1,3 @@
+# 小数点とマイナス符号を削除したうえで数字判定を行う
+df['金額(小数点符号削除)'] = df['金額'].map(lambda x: str(x).replace('-','').replace('.',''))
+df['judge'] = df['金額(小数点符号削除)'].map(lambda x: 'OK' if str(x).isdecimal() else 'NG')
