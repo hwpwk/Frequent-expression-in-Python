@@ -1,0 +1,16 @@
+yyyy_l = [str(x) for x in range(2017, 2021)]
+
+mm_l = [str(m) for m in range(1,13)]
+
+yyyymm_l = []
+
+for yyyy in yyyy_l:
+    for mm in mm_l:
+        if mm=='10' or mm=='11' or mm=='12':
+            yyyymm_l.append(yyyy+mm)
+        else:
+            yyyymm_l.append(yyyy+'0'+mm)
+
+del_list = ['201701','201702','201703','202007','202008','202009','202010','202011','202012']
+
+yyyymm_l = [k for k in yyyymm_l if k not in del_list]
