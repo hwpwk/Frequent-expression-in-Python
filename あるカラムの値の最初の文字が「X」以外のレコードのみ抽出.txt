@@ -1,0 +1,1 @@
+tmp[~tmp['ƒR[ƒh'].str.contains('^X')]
