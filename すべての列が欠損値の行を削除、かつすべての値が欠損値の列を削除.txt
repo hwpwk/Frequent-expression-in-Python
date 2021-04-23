@@ -1,0 +1,2 @@
+﻿# すべての列が欠損値の行を削除、かつすべての値が欠損値の列を削除
+df1 = df.dropna(how='all').dropna(axis=1, how='all')
