@@ -1,0 +1,7 @@
+﻿# NULL byte detected. This byte cannot be processed in Python's native csv library at the moment, so please pass in engine='c' instead
+# read_csvで上記エラーが発生した場合には下記を試す
+import codecs
+
+with codecs.open(file_list[2], "r", "utf-8", "ignore") as file:
+    df = pd.read_table(file, delimiter=",", dtype='object')
+    df = df.where(df.notnull(), None)
