@@ -1,0 +1,2 @@
+year_list = [y for y in range(2018, 2022)]
+df_list = [df.groupby('会計年度').get_group(str(fiscal_year)) for fiscal_year in year_list]
