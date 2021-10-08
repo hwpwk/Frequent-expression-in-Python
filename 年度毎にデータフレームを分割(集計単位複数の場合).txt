@@ -1,0 +1,2 @@
+# 集計単位が複数ある場合
+pl_df.groupby(['会計年度','会社コード']).get_group((str(year), comp))
