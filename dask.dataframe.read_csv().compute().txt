@@ -1,0 +1,4 @@
+import dask.dataframe as ddf
+
+# compute()：a Dask dataframe turns into a Pandas dataframe. 
+df_list = [ddf.read_csv(path,dtype='object', sep = '|').compute() for path in path_list]
