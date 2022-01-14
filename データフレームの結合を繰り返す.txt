@@ -1,0 +1,13 @@
+exp_list = []
+_exp_df = pd.DataFrame()
+for idx in p_df.index.tolist()[:3]:
+    exp_var = p_df.loc['All', col]*p_df.loc[idx, 'All'] / p_df.loc['All','All']
+    exp_list.append(exp_var)
+    add_df = pd.DataFrame({col:exp_list})
+    # データフレームに期待度数を格納したので値が格納されているリストを初期化
+    exp_list = []
+    # 縦に連結
+    _exp_df = pd.concat([_exp_df, add_df], ignore_index=True)
+
+
+
