@@ -1,0 +1,4 @@
+# 列の値を全角から半角に変換
+import unicodedata
+df['col'] = df['col'].map(lambda x:unicodedata.normalize('NFKC', x))
+
