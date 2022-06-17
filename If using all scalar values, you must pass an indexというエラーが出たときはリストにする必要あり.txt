@@ -1,0 +1,4 @@
+# pandas.Dataframeにスカラー値を渡す場合はリストにする必要がある
+date_df_list = [pd.DataFrame({
+    'FileName':[name], 'MinDate':[df['Trx Date'].min()], 'MaxDate':[df['Trx Date'].max()]
+}) for name, df in zip(file_name_list, df_list)]
