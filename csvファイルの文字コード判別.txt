@@ -1,0 +1,6 @@
+# 各csvファイルの格納先のパスがpath_listの要素とする
+# 参考：https://note.com/ayase_tukihi/n/n599a20ef9a18
+for path in path_list:
+    with open(path, 'rb') as f:
+        enc = chardet.detect(f.read())
+        print(f'{path}:{enc}')
